@@ -5,18 +5,38 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne ={
-    title: 'Article One | JR',
-    heading: 'Article One',
-    date: 'Mar 3, 2018',
-    content: 
-    `        <p>This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article.
-        </p>    
-        <p>This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article.
-        </p>
-        <p>This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article.
-        </p>
-    `
+var articles={
+    articleOne:{
+            title: 'Article One | JR',
+            heading: 'Article One',
+            date: 'Mar 3, 2018',
+            content: 
+                `<p>This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article.
+                </p>    
+                <p>This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article.
+                </p>
+                <p>This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article. This is content of first article.
+                </p>`
+        },
+    articleTwo:{
+            title: 'Article two | JR',
+            heading: 'Article two',
+            date: 'Mar 3, 2018',
+            content: 
+                `<p>
+                This is content of Second article.
+                </p>`
+        },
+    articleThree:{
+            title: 'Article three | JR',
+            heading: 'Article three',
+            date: 'Mar 3, 2018',
+            content: 
+                `<p>
+                This is content of third article.
+                </p>`
+        }
+    
 };
 
 function createTemplate(data){
