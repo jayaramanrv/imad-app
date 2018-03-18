@@ -86,9 +86,15 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var pool=new poo(config);
 app.get('/test-db', function(req, res){
-    
+    pool.quer('select * from test',function (err,result){
+        if(err){
+            res.status(500);
+        }
+    })
 });
+
 
 app.get('/:articleName', function (req, res) {
   var articleName=req.params.articleName;    
